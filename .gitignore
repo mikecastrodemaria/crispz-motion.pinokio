@@ -1,0 +1,12 @@
+# Cloned app + its two venvs + FILM weights (re-created by Install)
+app/
+env/
+# The user's projects (kept by Reset)
+projects/
+# Pinokio runtime
+logs/
+cache/
+# Python / OS junk
+__pycache__/
+*.pyc
+.DS_Store
