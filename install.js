@@ -69,6 +69,17 @@ module.exports = {
         dir: "app/film/models"
       }
     },
+    // ESRGAN model for 4K: 4x-ClearRealityV1 by Kim2091, 4.5 MB, pinned to the
+    // revision of 2026-02-11 that states Apache 2.0 (earlier releases were CC BY-NC-SA).
+    // The check step below verifies its SHA-256.
+    {
+      when: "{{!exists('app/models/esrgan/4x-ClearRealityV1.safetensors')}}",
+      method: "fs.download",
+      params: {
+        url: "https://huggingface.co/Kim2091/ClearRealityV1/resolve/6bfd32e08342ad5d8ae5ac2fd6629a72d525c76e/4x-ClearRealityV1.safetensors",
+        dir: "app/models/esrgan"
+      }
+    },
     // Local config (gitignored in the app); keep the user's file on re-install
     {
       when: "{{!exists('app/config.json')}}",

@@ -10,7 +10,8 @@ up to 4K, from a handful of key images made by the crispz family engines, with F
 - **Install**: clones `mikecastrodemaria/crispz-motion` into `app/`, creates two venvs
   (`app/env` for the app, Pillow only; `app/film/.venv` for FILM and ESRGAN with
   spandrel and PyTorch: CUDA cu128 on NVIDIA, ROCm, MPS or CPU), downloads the FILM
-  weights (`film_net_fp32.pt` v1.0.2, 138 MB, Apache 2.0), writes `app/config.json`,
+  weights (`film_net_fp32.pt` v1.0.2, 138 MB, Apache 2.0) and the ESRGAN model for 4K
+  (`4x-ClearRealityV1`, 4.5 MB, Apache 2.0, see Licences), writes `app/config.json`,
   puts the projects in `projects/` next to `app/`, then checks the install (torch build
   and GPU, weights size, ffmpeg).
 - **Start**: runs the web page (`cm_server.py`) on a free port and opens it.
@@ -123,7 +124,10 @@ with the `app/env` Python.
 
 ## Licences
 
-The launcher: same as crispz-motion. FILM weights and model: Apache 2.0. Default engine:
+The launcher: same as crispz-motion. FILM weights and model: Apache 2.0. ESRGAN model:
+[4x-ClearRealityV1](https://huggingface.co/Kim2091/ClearRealityV1) by Kim2091, downloaded
+from revision `6bfd32e` (2026-02-11), whose card states Apache 2.0; the releases before
+it (and OpenModelDB) state CC BY-NC-SA 4.0, non-commercial. Default engine:
 crispz-moss (MOSS-Image, Apache 2.0) with the Turbo LoRA (Apache 2.0). The edit keys use
 the Moss-Image-Edit LoRA, whose weights state no licence: the app marks them not for
 client work.
